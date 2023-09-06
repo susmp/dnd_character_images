@@ -1,0 +1,22 @@
+<div style="margin-left:20px;margin-top:20px">
+  
+  <h1>{{ image.title }}</h1>
+  
+
+  {% for tag in image.tags.all|slice:":1" %}
+    <a>
+      Tags:
+      
+      {% for tag in image.tags.all %}
+        <a href = "{% url 'images_by_tag' tag.slug %}">{{ tag }}</a>
+      {% endfor %}
+    </a>
+  {% endfor %}
+  
+  <h2><img src="{{ image.image.url }}"/></h2>
+</div>
+  
+  
+
+    
+
