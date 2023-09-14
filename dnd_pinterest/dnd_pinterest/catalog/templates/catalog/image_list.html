@@ -1,6 +1,5 @@
-{% extends "base_generic.html" %}
 
-{% block content %}
+
     <h1>Список изображений по тегу: {{ object_list.0 }}</h1>
 
     {% if object_list %}
@@ -9,7 +8,7 @@
       <div class="col-md-4">
         <div class="thumbnail">
           <a href="{{ x.get_absolute_url }}">
-            <img src="{{ x.image.url }}"  height="300"   style="width:100%">
+            <img src="{{ x.image.url }}"  height="300" >
             <div class="caption">
               <p>{{ x.title }}</p>
             </div>
@@ -21,4 +20,3 @@
     {% else %}
       <p>There are no images with this tag.</p>
     {% endif %}
-{% endblock %}
